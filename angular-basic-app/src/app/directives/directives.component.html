@@ -1,0 +1,19 @@
+<!--If the condition is true, renders the element-->
+<p *ngIf="serverCreated; else elseResult">This is the result of if!</p>
+<ng-template #elseResult>
+  <p>This is the result of else!</p>
+</ng-template>
+
+<p [ngStyle]="{'color': getColor()}" [ngClass]="{'mt-5': serverCreated}">Color change according to server activation</p>
+
+<p class="text-danger" *ngFor="let server of servers">
+  {{server}}
+</p>
+
+<button class="btn btn-success" (click)="displayItemsToggle()">Display details</button>
+<p *ngIf="displayItems">Secret password: tuna</p>
+
+<p *ngFor="let click of clicks; let position = index" [ngClass]="{'text-white': position > 4 }"
+[ngStyle]="{'background-color': position > 4 ? 'blue':''}">
+  {{click}}
+</p>
