@@ -6,12 +6,21 @@
     <div class="col-md-12">
       <app-success-alert></app-success-alert>
     </div>
+    <div class="col-md-4 offset-md-4 text-center">
+      <label for="serverName">{{serverName}}</label>
+      <!--      The dollar sign sends the event object to the handler function-->
+      <!--      <input type="text" class="form-control" id="serverName" (input)="onUpdateServerName($event)">-->
+<!--      two way data binding-->
+      <input type="text" class="form-control" id="serverName" [(ngModel)]="serverName">
+    </div>
     <div class="col-md-12 text-center">
-      <button class="btn btn-primary mb-3" [disabled]="!allowNewServer" (click)="onCreateServer()"> <!-- Property binding and Event binding -->
+      <button class="btn btn-primary mb-3 mt-3" [disabled]="!allowNewServer" (click)="onCreateServer()">
+        <!-- Property binding and Event binding -->
         Add server (currently: {{allowNewServer === true ? "Allowed" : "Not allowed"}})
       </button>
       <p>{{serverCreationStatus}}</p>
       <app-server></app-server>
+      <app-data-binding></app-data-binding>
     </div>
   </div>
 </div>

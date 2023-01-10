@@ -1,0 +1,4 @@
+<!--all 4 types of data binding-->
+<input type="text" class="form-control mb-3" [(ngModel)]="userName">
+<p>{{userName}}</p>
+<button class="btn btn-danger" [disabled]="userName.length === 0" (click)="eraseUsername()">Erase</button>
