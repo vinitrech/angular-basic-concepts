@@ -7,9 +7,10 @@
       <app-success-alert></app-success-alert>
     </div>
     <div class="col-md-12 text-center">
-      <button class="btn btn-primary mb-3" [disabled]="!allowNewServer"> <!-- Property data binding -->
-        Add server (currently: {{allowNewServer}})
+      <button class="btn btn-primary mb-3" [disabled]="!allowNewServer" (click)="onCreateServer()">
+        Add server (currently: {{allowNewServer === true ? "Allowed" : "Not allowed"}})
       </button>
+      <p>{{serverCreationStatus}}</p>
       <app-server></app-server>
     </div>
   </div>
